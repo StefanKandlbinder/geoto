@@ -1,8 +1,16 @@
 {
-  "name": "foundation-compass-app",
-  "version": "0.0.1",
-  "private": "true",
+  "name": "geoto",
+  "description": "Find cool locations via geo located photos",
+  "version": "0.0.0",
+  "homepage": "http://www.blanc.at/geoto",
+  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "susy": "~2.2.5"
   }
 }

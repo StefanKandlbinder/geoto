@@ -1,0 +1,57 @@
+<div ng-controller="GalleryCtrl as photos" ng-class="{ flickr: photos.provider == 'flickr', instagram: photos.provider == 'instagram' }">
+
+		<div class="columns large-3 medium-3 small-4">
+			<label>
+				latitude: 
+				<input type="number" min="-90" max="90" ng-model="photos.latitude" ng-change="photos.setLatitude()" />
+			</label>
+		</div>
+		<div class="columns large-3 medium-3 small-4">
+			<label>
+				longitude: 
+				<input type="number" min="-90" max="90" ng-model="photos.longitude" ng-change="photos.setLongitude()" />
+			</label>
+		</div>
+		<div class="columns large-2 medium-1 small-4">
+			<label>
+				radius[km]: 
+				<select ng-model="photos.radius" ng-change="photos.setRadius()">
+					<option>0.1</option>
+					<option>0.5</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</label>
+		</div>
+		<div class="columns large-4 medium-5 small-12 geoto-navbar">
+			<label>&nbsp;</label>
+			<ul class="button-group">
+			<li><button class="button tiny" type="button" ng-class="{ active: photos.provider == 'instagram' }" ng-click="photos.setProvider('instagram')"><i class="fa fa-instagram"></i></button></li>
+				<li><button class="button tiny" type="button" ng-click="photos.getGeo()"><i class="fa fa-street-view"></i></button>
+				<li><button class="button tiny" type="button" ng-click="" ng-hide="true"><i class="fa fa-map-marker"></i></button></li>
+				<li><button class="button tiny" type="button" ng-class="{ active: photos.provider == 'flickr' }" ng-click="photos.setProvider('flickr')"><i class="fa fa-flickr"></i></button></li>
+			</ul>
+		</div>
+ 	
+		<div class="columns large-12 centered geoto-pager">
+			<div ng-class="{ alert: photos.foundPhotos <= 0, success: photos.foundPhotos > 0 }" class="label" sticky style="display: block; margin-bottom: 0.5rem"><i class="fa fa-arrow-left left" ng-class="{ is_disabled: photos.page <= 1 }" ng-click="photos.prevPictures()"></i><span>showing {{ photos.showingPicturesFrom }} - {{ photos.showingPicturesTo }} of {{ photos.foundPhotos }} photos</span><i class="fa fa-arrow-right right" ng-class="{ is_disabled: (photos.pages - photos.page) == 0 }" ng-click="photos.nextPictures()"></i></div>
+		</div>
+
+		<div class="columns large-12 centered">
+			<ul id="photos" class="small-block-grid-3 medium-block-grid-6 large-block-grid-8">
+				<!-- <li ng-repeat="photo in photos.photos">
+					<geoto-thumbnail></geoto-thumbnail>
+				</li>
+				<li ng-repeat="photo in photos.photos">
+					<geoto-thumbnail></geoto-thumbnail>
+				</li> -->
+				<li ng-repeat="photo in photos.photos">
+					<geoto-thumbnail></geoto-thumbnail>
+				</li>
+			</ul>
+		</div>
+
+</div>
