@@ -24,7 +24,7 @@ angular
   }])
   .controller('geotoController', geotoController);
 
-geotoController.$inject = ['$document', 
+geotoController.$inject = ['$document',
                            '$rootScope'];
 
 function geotoController($document, $rootScope) {

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="geoto" ng-controller="geotoController as geoto" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="geoto" ng-controller="geotoController as geoto" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +12,6 @@
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
   <link rel="stylesheet" href="css/geoto.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Grand+Hotel&text=geoto' rel='stylesheet' type='text/css'>
@@ -24,18 +26,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
-  
+
 </head>
+
 <body id="top">
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <div class="row">
-    <div class="columns large-12 large-centered"> 
+    <div class="columns large-12 large-centered">
       <h2><a href="#">geoto</a> <span ng-cloak>{{ info }}</span></h2>
     </div>
-  
+
     <div ng-view></div>
   </div>
   <div id="map" style="width: 70vw; height: 50vh; margin: 0 auto;"></div>
@@ -49,4 +52,5 @@
   <!-- <script src="http://code.jquery.com/jquery-2.1.4.js"></script> -->
   <script src="js/geoto.min.js"></script>
 </body>
+
 </html>
